@@ -3,7 +3,7 @@ var client = require('./connection.js');
 client.search({  
   index: 'diosteodia',
   type: 'doc',
-  fields: ['author','quote'],
+  // fields: ['author','quote'],
   size: 5,
   body: {
     query: {
