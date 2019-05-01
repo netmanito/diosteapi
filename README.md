@@ -31,6 +31,13 @@ var argv = require('yargs').argv;
 * addquote - add quote
 * delquote $id - delete quote 
 
+Usage:
+
 ```
-node query2.js --search="culo"
+node app.js 
+--quote=culo //  word search
+--aquote=jopi // author search
+--iquote=1234 // id search
+--rquote // random quote
+
 ```
