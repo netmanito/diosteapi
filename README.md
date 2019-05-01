@@ -12,6 +12,15 @@ var client=require ('./connection.js');
 var argv = require('yargs').argv;
 ```
 
+## Files
+
+* connection.js - connection settings
+* addquote.js - add quote to system
+* delquote.js - delete quote by `id` number
+* rquote.js - show random quote
+* 
+
+
 ## Queries
 
 * quote - random quote
