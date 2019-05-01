@@ -15,11 +15,8 @@ var argv = require('yargs').argv;
 ## Files
 
 * connection.js - connection settings
-* addquote.js - add quote to system
-* delquote.js - delete quote by `id` number
-* rquote.js - show random quote
-* quote.js - search a `$word` in quotes   
-* aquote.js - search a quote by `$author`
+* functions.js - quote functions
+* app.js - front end node app
 
 
 ## Queries
