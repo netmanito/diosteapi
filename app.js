@@ -38,6 +38,12 @@ if (argv.rquote) {
   });
 }
 
+// function addquote 
+if (argv.addquote) {
+  functions.addquote(argv.addquote, function(addquote) {
+    console.log(addquote);
+ });
+}
 
 // ADD THESE TWO LINES
 //var rquote = require('./functions.js');

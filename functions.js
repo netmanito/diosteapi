@@ -90,6 +90,7 @@ client.search({
     });
 
 }
+// function search quote by id
 var iquote = function(idLookUp) {
   client.search({
   index: 'diosteodia',
@@ -110,11 +111,31 @@ var iquote = function(idLookUp) {
         })
       }
     });
-  
 }
+// function addquote
+var addquote = function(addLookUp) {
+  client.index({
+  index: 'diosteodia',
+  id: '1',	  
+  type: 'doc',
+  body: {
+        'author': 'test',
+	      'quote': addLookUp
+        }
+    },function (error, response,status) {
+      if (error){
+        console.log("search error: "+error)
+      }
+      else {
+          console.log(response);
+      }
+    });  
+}
+
 module.exports = {
   results: results,
   rquote: rquote,
   aquote: aquote,
-  iquote: iquote
+  iquote: iquote,
+  addquote: addquote
 };
