@@ -131,6 +131,21 @@ var addquote = function(addLookUp) {
       }
     });  
 }
+// function delquote
+var delquote = function(delLookUp) {
+  client.delete({
+  index: 'diosteodia',
+  id: '1',	  
+  type: 'doc',
+    },function (error, response,status) {
+      if (error){
+        console.log("search error: "+error)
+      }
+      else {
+          console.log(response);
+      }
+    });  
+}
 
 module.exports = {
   results: results,

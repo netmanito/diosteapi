@@ -45,8 +45,13 @@ if (argv.addquote) {
  });
 }
 
-// ADD THESE TWO LINES
-//var rquote = require('./functions.js');
-//app.use('/rquote', results);
+// function delquote 
+if (argv.delquote) {
+  functions.delquote(argv.delquote, function(delquote) {
+    console.log(delquote);
+ });
+}
 
+// ADD THESE TWO LINES
+//app.use('/rquote', results);
 //module.exports = app;
