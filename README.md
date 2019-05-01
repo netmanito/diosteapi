@@ -18,7 +18,8 @@ var argv = require('yargs').argv;
 * addquote.js - add quote to system
 * delquote.js - delete quote by `id` number
 * rquote.js - show random quote
-* 
+* quote.js - search a `$word` in quotes   
+* aquote.js - search a quote by `$author`
 
 
 ## Queries
