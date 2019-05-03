@@ -9,10 +9,9 @@
   "author": "netmanito",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.19.0",
     "elasticsearch": "^15.4.1",
-    "express": "^4.16.4",
     "get-json": "^1.0.1",
+    "node-telegram-bot-api": "^0.30.0",
     "yargs": "^13.2.2"
   }
 }
