@@ -3,7 +3,7 @@ var getJSON = require('get-json');
 
 
 // function show quote from word
-var results = function(quoteLookup) {
+var quote = function(quoteLookup) {
 client.search({
   index: 'diosteodia',
   type: 'doc',
@@ -148,7 +148,7 @@ var delquote = function(delLookUp) {
 }
 
 module.exports = {
-  results: results,
+  quote: quote,
   rquote: rquote,
   aquote: aquote,
   iquote: iquote,

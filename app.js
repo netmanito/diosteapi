@@ -11,8 +11,9 @@ var functions = require('./functions.js');
 } */
 
 // function search word in quote
+
 if (argv.quote) {
-  functions.results(argv.quote, function(results) {
+  functions.quote(argv.quote, function(quote) {
       console.log(results);
   });
 } 
