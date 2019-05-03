@@ -1,9 +1,11 @@
 # Diosteapi
 
+```
 npm init
 npm install elasticsearch --save
 npm install get-json --save
 npm install yargs --save
+```
 
 ## Usage
 
