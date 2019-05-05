@@ -12,10 +12,10 @@ const bot = new TelegramBot(token, {polling: true});
 
 
 bot.on('message', (msg) => {
-    
+  const chatId = "-21301224";
   var Culo = "culo";
   if (msg.text.toString().toLowerCase().indexOf(Culo) === 0) {
-  bot.sendMessage(msg.chat.id,"<ICEFIRE> ole mi culo... cooomo mi culo... no hay nunguno :) <-- seguro que alguno quiere probarlo ;)");
+  bot.sendMessage(chatId, "<ICEFIRE> ole mi culo... cooomo mi culo... no hay nunguno :) <-- seguro que alguno quiere probarlo ;)");
   } 
       
   });
