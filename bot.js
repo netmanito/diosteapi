@@ -4,21 +4,30 @@ var functions = require('./functions.js');
 const TelegramBot = require('node-telegram-bot-api');
 
 // replace the value below with the Telegram token you receive from @BotFather
-const token = 'YOUR_TELEGRAM_BOT_TOKEN';
+var apiKey = process.env.apiKey;
+const token = '';
 
 // Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(token, {polling: true});
 
-// Matches "/echo [whatever]"
-bot.onText(/^\/quote/, function(msg){
-  console.log(msg);
 
-  const chatId = msg.chat.id;
-  const username = msg.from.username;
-    functions.quote(msg.quote), function(quote){
-      bot.sendMessage(chatId, quote);
+bot.on('message', (msg) => {
+    
+  var Hi = "hi";
+  if (msg.text.toString().toLowerCase().indexOf(Hi) === 0) {
+  bot.sendMessage(msg.chat.id,"Hello dear user");
+  } 
+      
+  });
+
+
+// Matches "/echo [whatever]"
+bot.onText(/^\/rquote/, function(msg) {
+    functions.rquote(msg.rquote), function(rquote){
+      console.log(msg)
     }
-});
+    bot.sendMessage(msg.chat.id,msg);
+  });
 
 /* if (argv.search) {
   var quoteLookup=argv.search;
@@ -27,7 +36,7 @@ bot.onText(/^\/quote/, function(msg){
 } */
 
 // function search word in quote
-
+/*
 if (argv.quote) {
   functions.quote(argv.quote, function(quote) {
       console.log(results);
@@ -49,11 +58,13 @@ if (argv.iquote) {
 }
 
 // function random quote
-if (argv.rquote) {
+/* if (argv.rquote) {
   functions.rquote(function(rquote) {
      console.log(rquote);
   });
-}
+} */
+
+/*
 
 // function addquote 
 if (argv.addquote) {
@@ -68,6 +79,7 @@ if (argv.delquote) {
     console.log(delquote);
  });
 }
+*/
 
 // ADD THESE TWO LINES
 //app.use('/rquote', results);
