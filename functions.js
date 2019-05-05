@@ -79,7 +79,7 @@ var rquote = function(quote) {
                 }
             },
         }
-    },function (error, response,status) {
+    },function (error, response, status) {
         if (error){
             console.log("search error: "+error)
         }
@@ -87,6 +87,7 @@ var rquote = function(quote) {
             response.hits.hits.forEach(function(hit){
                 console.log(hit);
                 quote = hit;
+                return quote;
             })
         }
     });
