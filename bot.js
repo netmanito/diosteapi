@@ -5,7 +5,7 @@ const TelegramBot = require('node-telegram-bot-api');
 
 // replace the value below with the Telegram token you receive from @BotFather
 var apiKey = process.env.apiKey;
-const token = '';
+const token = '819565236:AAGLaMcN6TCk1N2Te84dPsybQCCqDsIKgsI';
 
 // Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(token, {polling: true});
@@ -13,20 +13,24 @@ const bot = new TelegramBot(token, {polling: true});
 
 bot.on('message', (msg) => {
     
-  var Hi = "hi";
-  if (msg.text.toString().toLowerCase().indexOf(Hi) === 0) {
-  bot.sendMessage(msg.chat.id,"Hello dear user");
+  var Culo = "culo";
+  if (msg.text.toString().toLowerCase().indexOf(Culo) === 0) {
+  bot.sendMessage(msg.chat.id,"<ICEFIRE> ole mi culo... cooomo mi culo... no hay nunguno :) <-- seguro que alguno quiere probarlo ;)");
   } 
       
   });
 
+bot.onText(/^\/chatid/, (msg) => {
+    const chatId = msg.chat.id;
+    bot.sendMessage(chatId, "El id de este chat es: " + chatId);  
+});
 
 // Matches "/echo [whatever]"
 bot.onText(/^\/rquote/, function(msg) {
     functions.rquote(msg.rquote), function(rquote){
       console.log(msg)
+      bot.sendMessage(msg.chat.id,msg);
     }
-    bot.sendMessage(msg.chat.id,msg);
   });
 
 /* if (argv.search) {
@@ -83,4 +87,4 @@ if (argv.delquote) {
 
 // ADD THESE TWO LINES
 //app.use('/rquote', results);
-//module.exports = app;
+module.exports = bot;
