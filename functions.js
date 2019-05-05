@@ -61,8 +61,7 @@ var aquote = function(authorLookup) {
     });
 }
 // function show random quote  
-var rquote = function() {
-    var quote;
+var rquote = function(quote) {
     client.search({
         index: 'diosteodia',
         type: 'doc',
@@ -91,7 +90,6 @@ var rquote = function() {
             })
         }
     });
-    return quote;
 }
 // function search quote by id
 var iquote = function(idLookUp) {
