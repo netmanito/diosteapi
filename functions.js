@@ -1,3 +1,4 @@
+const util = require('util');
 var client = require ('./connection.js');  
 var getJSON = require('get-json');  
 
@@ -61,7 +62,7 @@ var aquote = function(authorLookup) {
     });
 }
 // function show random quote  
-var rquote = function(quote) {
+var rquote = function(cb, ecb) {
     client.search({
         index: 'diosteodia',
         type: 'doc',
@@ -82,12 +83,12 @@ var rquote = function(quote) {
     },function (error, response, status) {
         if (error){
             console.log("search error: "+error)
+            ecb();
         }
         else {
             response.hits.hits.forEach(function(hit){
-                console.log(hit);
-                quote = hit;
-                return quote;
+                console.log("foreach hit",hit);
+                cb(util.format("%s\n\n-- Added by %s", hit._source.quote, hit._source.author));
             })
         }
     });

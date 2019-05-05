@@ -27,11 +27,12 @@ bot.onText(/^\/chatid/, (msg) => {
 
 // Matches "/echo [whatever]"
 bot.onText(/^\/rquote/, function(msg) {
-    var quote;
-    ret = functions.rquote(quote);
-    console.log("rquote val of quote: ", quote);
-    console.log("rquote val of ret: ", ret);
-    bot.sendMessage(msg.chat.id, quote);
+    functions.rquote(function(quote) {
+        bot.sendMessage(msg.chat.id, quote);
+    }, function() {
+        bot.sendMessage(msg.chat.id, "Error en rquote");
+    });
+    
 });
 
 /* if (argv.search) {
