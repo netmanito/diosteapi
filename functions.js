@@ -62,34 +62,36 @@ var aquote = function(authorLookup) {
 }
 // function show random quote  
 var rquote = function() {
-client.search({
-  index: 'diosteodia',
-  type: 'doc',
-  _source: ['author','quote'],
-  // fields: ['author','quote'],
-  size: 1,
-  body: {
-        query: {
-            function_score: {
+    var quote;
+    client.search({
+        index: 'diosteodia',
+        type: 'doc',
+        _source: ['author','quote'],
+        // fields: ['author','quote'],
+        size: 1,
+        body: {
+            query: {
+                function_score: {
                     query: { match_all: {}
-        },
-                boost: 5,
-                random_score: {},
-                boost_mode: 'multiply'
+                           },
+                    boost: 5,
+                    random_score: {},
+                    boost_mode: 'multiply'
+                }
+            },
         }
-  },
- }
-},function (error, response,status) {
-      if (error){
-        console.log("search error: "+error)
-      }
-      else {
-        response.hits.hits.forEach(function(hit){
-          console.log(hit);
-        })
-      }
+    },function (error, response,status) {
+        if (error){
+            console.log("search error: "+error)
+        }
+        else {
+            response.hits.hits.forEach(function(hit){
+                console.log(hit);
+                quote = hit;
+            })
+        }
     });
-
+    return quote;
 }
 // function search quote by id
 var iquote = function(idLookUp) {
