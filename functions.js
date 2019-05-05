@@ -65,6 +65,7 @@ var rquote = function() {
 client.search({
   index: 'diosteodia',
   type: 'doc',
+  _source: ['author','quote'],
   // fields: ['author','quote'],
   size: 1,
   body: {
